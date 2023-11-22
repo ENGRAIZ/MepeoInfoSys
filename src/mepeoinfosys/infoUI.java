@@ -107,6 +107,9 @@ public final class infoUI extends javax.swing.JFrame {
             rrs.getString("permanent"),
             rrs.getString("parttime"),
             rrs.getString("submitted_qualifications"),
+            rrs.getString("educational"),
+            rrs.getString("experience"),
+            rrs.getString("seminar"),
             rrs.getString("remarks")
             
         };
@@ -167,8 +170,8 @@ public final class infoUI extends javax.swing.JFrame {
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mepeoinfotable", "root", "");
             Statement st = cn.createStatement();
 
-            String sql = "INSERT INTO `mepeotable` (ID,company,date_registered,name_of_mepeo,permanent,parttime,submitted_qualifications,remarks)"
-                    + "VALUES (?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO `mepeotable` (ID,company,date_registered,name_of_mepeo,permanent,parttime,submitted_qualifications,educational,experience,seminar,remarks)"
+                    + "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pst = cn.prepareStatement(sql);
 
             for (int i = 0; i < rowData.size(); i++) {
@@ -213,15 +216,15 @@ public final class infoUI extends javax.swing.JFrame {
 
         infoTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Company", "Date Registered", "Name of Mepeo", "Permanent", "Part-time", "Submitted Qualifications", "Remarks"
+                "ID", "Company", "Date Registered", "Name of Mepeo", "Permanent", "Part-time", "Submitted Qualifications", "Educational Background", "Work Experience", "Seminars and Workshops Attended", "Remarks"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -345,9 +348,12 @@ public final class infoUI extends javax.swing.JFrame {
                 String permanent = infoTable.getValueAt(selectedRow, 4).toString();
                 String parttime = infoTable.getValueAt(selectedRow, 5).toString();
                 String sq = infoTable.getValueAt(selectedRow, 6).toString();
-                String remarks = infoTable.getValueAt(selectedRow, 7).toString();
+                String eb = infoTable.getValueAt(selectedRow, 7).toString();
+                String we = infoTable.getValueAt(selectedRow, 8).toString();
+                String sw = infoTable.getValueAt(selectedRow, 9).toString();
+                String remarks = infoTable.getValueAt(selectedRow, 10).toString();
                 
-                ViewDetailsMepeo vdm = new ViewDetailsMepeo(id,company,dr,nom,permanent,parttime,sq,remarks);
+                ViewDetailsMepeo vdm = new ViewDetailsMepeo(id,company,dr,nom,permanent,parttime,sq,eb,we,sw,remarks);
                 vdm.setVisible(true);
             }
         }
@@ -405,11 +411,14 @@ public final class infoUI extends javax.swing.JFrame {
             String permanent = infoTable.getValueAt(selectedRow, 4).toString();
             String parttime = infoTable.getValueAt(selectedRow, 5).toString();
             String sq = infoTable.getValueAt(selectedRow, 6).toString();
-            String remarks = infoTable.getValueAt(selectedRow, 7).toString();
+            String eb = infoTable.getValueAt(selectedRow, 7).toString();
+            String we = infoTable.getValueAt(selectedRow, 8).toString();
+            String sw = infoTable.getValueAt(selectedRow, 9).toString();
+            String remarks = infoTable.getValueAt(selectedRow, 10).toString();
 
 
             // Create a new EditInfoUI instance and pass the data
-            editUI = new editUI(id,company,dr,nom,permanent,parttime,sq,remarks);
+            editUI = new editUI(id,company,dr,nom,permanent,parttime,sq,eb,we,sw,remarks);
             editUI.setVisible(true);
             this.dispose();
             

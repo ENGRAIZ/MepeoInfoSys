@@ -2,7 +2,7 @@ package mepeoinfosys;
 
 public class ViewDetailsMepeo extends javax.swing.JFrame {
 
-    public ViewDetailsMepeo(String id,String company,String dr,String nom,String permanent,String parttime,String sq,String remarks) {
+    public ViewDetailsMepeo(String id,String company,String dr,String nom,String permanent,String parttime,String sq,String eb,String we,String sw,String remarks) {
         setResizable(false);
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         initComponents();
@@ -16,7 +16,10 @@ public class ViewDetailsMepeo extends javax.swing.JFrame {
         }else if(parttime.equals("")){
             ppField.setText("Permanent/Temporary: "+permanent);
         }
-        sqField.setText("Submitted Qualifications: "+sq);
+        sqField.setText("Submitted Qualifications: \n"+sq);
+        ebField.setText("Educational Backgrounds: \n"+eb);
+        weField.setText("Work Experience: \n"+we);
+        swField.setText("Seminars and Workshop Attended: \n"+sw);
         remarksField.setText("Remarks: "+remarks);
             
     }
@@ -25,6 +28,7 @@ public class ViewDetailsMepeo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane5 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         companyField = new javax.swing.JLabel();
@@ -33,8 +37,15 @@ public class ViewDetailsMepeo extends javax.swing.JFrame {
         nomField = new javax.swing.JLabel();
         drField = new javax.swing.JLabel();
         ppField = new javax.swing.JLabel();
-        sqField = new javax.swing.JLabel();
         remarksField = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        swField = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        sqField = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ebField = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        weField = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -103,27 +114,56 @@ public class ViewDetailsMepeo extends javax.swing.JFrame {
         ppField.setText("Permanent/Temporary");
         jPanel3.add(ppField, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 130, 872, -1));
 
-        sqField.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        sqField.setForeground(new java.awt.Color(6, 26, 64));
-        sqField.setText("Submitted Qualifications");
-        jPanel3.add(sqField, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 181, 872, -1));
-
         remarksField.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         remarksField.setForeground(new java.awt.Color(6, 26, 64));
         remarksField.setText("Remarks");
-        jPanel3.add(remarksField, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 232, 872, -1));
+        jPanel3.add(remarksField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 970, 872, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, 290));
+        swField.setColumns(20);
+        swField.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        swField.setRows(5);
+        jScrollPane1.setViewportView(swField);
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 770, 850, -1));
+
+        sqField.setColumns(20);
+        sqField.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        sqField.setRows(5);
+        jScrollPane2.setViewportView(sqField);
+
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 850, -1));
+
+        ebField.setColumns(20);
+        ebField.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        ebField.setRows(5);
+        jScrollPane3.setViewportView(ebField);
+
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 850, -1));
+
+        weField.setColumns(20);
+        weField.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        weField.setRows(5);
+        jScrollPane4.setViewportView(weField);
+
+        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, 850, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, 1010));
+
+        jScrollPane5.setViewportView(jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 1069, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 682, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -175,13 +215,21 @@ public class ViewDetailsMepeo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel companyField;
     private javax.swing.JLabel drField;
+    private javax.swing.JTextArea ebField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel nomField;
     private javax.swing.JLabel ppField;
     private javax.swing.JLabel remarksField;
-    private javax.swing.JLabel sqField;
+    private javax.swing.JTextArea sqField;
+    private javax.swing.JTextArea swField;
+    private javax.swing.JTextArea weField;
     // End of variables declaration//GEN-END:variables
 }

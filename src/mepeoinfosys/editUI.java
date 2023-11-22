@@ -17,7 +17,7 @@ public class editUI extends javax.swing.JFrame {
     public infoUI infoUI;
     public Connection cn;
     public Statement st;
-    public editUI(String id,String company,String dr,String nom,String permanent,String parttime,String sq,String remarks) {
+    public editUI(String id,String company,String dr,String nom,String permanent,String parttime,String sq,String eb,String we,String sw,String remarks) {
       
         setResizable(false);
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -36,6 +36,9 @@ public class editUI extends javax.swing.JFrame {
             populatePPList1();
         }
         sqField.setText(sq);
+        ebField.setText(eb);
+        weField.setText(we);
+        swField.setText(sw);
         remarksField.setText(remarks);
 
         
@@ -66,7 +69,6 @@ public class editUI extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        sqField = new javax.swing.JTextField();
         remarksField = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -74,6 +76,17 @@ public class editUI extends javax.swing.JFrame {
         confirmButton = new javax.swing.JButton();
         idField = new javax.swing.JTextField();
         cancelButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        sqField = new javax.swing.JTextArea();
+        jLabel23 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ebField = new javax.swing.JTextArea();
+        jLabel24 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        weField = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        swField = new javax.swing.JTextArea();
+        jLabel25 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 255));
         jPanel1.setToolTipText("");
@@ -162,6 +175,7 @@ public class editUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EDIT INFORMATION");
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
@@ -216,27 +230,20 @@ public class editUI extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("Submitted Qualifications");
-        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
-
-        sqField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sqFieldActionPerformed(evt);
-            }
-        });
-        jPanel3.add(sqField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 216, 31));
+        jLabel21.setText("Seminars and Workshops");
+        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, -1, -1));
 
         remarksField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 remarksFieldActionPerformed(evt);
             }
         });
-        jPanel3.add(remarksField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 216, 31));
+        jPanel3.add(remarksField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 640, 210, 31));
 
         jLabel22.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Remarks");
-        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, -1));
+        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 640, -1, -1));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
@@ -265,7 +272,7 @@ public class editUI extends javax.swing.JFrame {
                 confirmButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 105, -1));
+        jPanel3.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 680, 105, -1));
 
         idField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -285,6 +292,45 @@ public class editUI extends javax.swing.JFrame {
         });
         jPanel3.add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 10, 100, -1));
 
+        sqField.setColumns(20);
+        sqField.setRows(5);
+        jScrollPane1.setViewportView(sqField);
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 210, -1));
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("Submitted Qualifications");
+        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+
+        ebField.setColumns(20);
+        ebField.setRows(5);
+        jScrollPane2.setViewportView(ebField);
+
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 210, -1));
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setText("Educational Backgrounds");
+        jPanel3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, -1));
+
+        weField.setColumns(20);
+        weField.setRows(5);
+        jScrollPane3.setViewportView(weField);
+
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, 210, -1));
+
+        swField.setColumns(20);
+        swField.setRows(5);
+        jScrollPane4.setViewportView(swField);
+
+        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 550, 210, -1));
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("Work Experience");
+        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, -1, -1));
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -301,11 +347,11 @@ public class editUI extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(jLabel27)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 717, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 468));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 790));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -335,7 +381,8 @@ public class editUI extends javax.swing.JFrame {
             cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/mepeoinfotable","root","");
             st=cn.createStatement();
             String sql = "UPDATE mepeotable SET company = ?, date_registered = ?, name_of_mepeo = ?, "
-                    + "permanent = ?, parttime = ?, submitted_qualifications = ?, remarks = ? WHERE `ID` = ?";
+                    + "permanent = ?, parttime = ?, submitted_qualifications = ?, remarks = ? "
+                    + "educational = ?, experience = ?, seminar = ?, WHERE `ID` = ?";
 
             PreparedStatement pst = cn.prepareStatement(sql);
             if(ppList.getSelectedItem().equals("Permanent")){
@@ -345,8 +392,11 @@ public class editUI extends javax.swing.JFrame {
                 pst.setString(4, (String) ppList.getSelectedItem());
                 pst.setString(5, "");
                 pst.setString(6, sqField.getText());
-                pst.setString(7, remarksField.getText());
-                pst.setString(8, idField.getText());
+                pst.setString(7, ebField.getText());
+                pst.setString(8, weField.getText());
+                pst.setString(9, swField.getText());
+                pst.setString(10, remarksField.getText());
+                pst.setString(11, idField.getText());
                 
             }else{
                 pst.setString(1, companyField.getText());
@@ -355,8 +405,11 @@ public class editUI extends javax.swing.JFrame {
                 pst.setString(4, "");
                 pst.setString(5, (String) ppList.getSelectedItem());
                 pst.setString(6, sqField.getText());
-                pst.setString(7, remarksField.getText());
-                pst.setString(8, idField.getText());
+                pst.setString(7, ebField.getText());
+                pst.setString(8, weField.getText());
+                pst.setString(9, swField.getText());
+                pst.setString(10, remarksField.getText());
+                pst.setString(11, idField.getText());
             }
 
             pst.executeUpdate();
@@ -394,10 +447,6 @@ public class editUI extends javax.swing.JFrame {
     private void nomFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nomFieldActionPerformed
-
-    private void sqFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sqFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sqFieldActionPerformed
 
     private void remarksFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remarksFieldActionPerformed
         // TODO add your handling code here:
@@ -447,6 +496,7 @@ public class editUI extends javax.swing.JFrame {
     private javax.swing.JTextField companyField;
     private javax.swing.JButton confirmButton;
     private javax.swing.JTextField drField;
+    private javax.swing.JTextArea ebField;
     private javax.swing.JTextField idField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
@@ -456,6 +506,9 @@ public class editUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -463,12 +516,18 @@ public class editUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JButton loginButton;
     private javax.swing.JTextField nomField;
     private javax.swing.JPasswordField passtxt;
     private javax.swing.JComboBox<String> ppList;
     private javax.swing.JTextField remarksField;
-    private javax.swing.JTextField sqField;
+    private javax.swing.JTextArea sqField;
+    private javax.swing.JTextArea swField;
     private javax.swing.JTextField usertxt;
+    private javax.swing.JTextArea weField;
     // End of variables declaration//GEN-END:variables
 }
